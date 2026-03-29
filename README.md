@@ -1,3 +1,5 @@
+<img width="1917" height="917" alt="image" src="https://github.com/user-attachments/assets/e94b4c32-a9f8-4468-8385-d9b6733ea30e" />
+
 # MarketLens AI 📈
 
 An intelligent NSE stock analysis platform that uses AI to detect trading patterns, generate video updates, and provide real-time market insights.
