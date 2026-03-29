@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Firebase Test</title>
+</head>
+<body>
+    <h1>Firebase Configuration Test</h1>
+    <div id="output"></div>
+    
+    <script type="module">
+        // Test if environment variables are accessible
+        const output = document.getElementById('output');
+        
+        output.innerHTML = `
+            <h3>Environment Variables:</h3>
+            <p>VITE_FIREBASE_API_KEY: ${import.meta.env.VITE_FIREBASE_API_KEY ? 'Set' : 'Missing'}</p>
+            <p>VITE_FIREBASE_AUTH_DOMAIN: ${import.meta.env.VITE_FIREBASE_AUTH_DOMAIN || 'Missing'}</p>
+            <p>VITE_FIREBASE_PROJECT_ID: ${import.meta.env.VITE_FIREBASE_PROJECT_ID || 'Missing'}</p>
+            <p>VITE_FIREBASE_APP_ID: ${import.meta.env.VITE_FIREBASE_APP_ID || 'Missing'}</p>
+        `;
+        
+        // Test Firebase initialization
+        import { initializeApp } from "firebase/app";
+        import { getAuth } from "firebase/auth";
+        
+        const firebaseConfig = {
+            apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+            authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+            projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+            storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+            messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+            appId: import.meta.env.VITE_FIREBASE_APP_ID
+        };
+        
+        try {
+            const app = initializeApp(firebaseConfig);
+            const auth = getAuth(app);
+            output.innerHTML += '<h3>✅ Firebase initialized successfully</h3>';
+        } catch (error) {
+            output.innerHTML += `<h3>❌ Firebase initialization failed:</h3><p>${error.message}</p>`;
+        }
+    </script>
+</body>
+</html>
