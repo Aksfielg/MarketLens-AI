@@ -149,6 +149,7 @@ def run_scanner():
         """)
         
         with engine.begin() as conn:
+            conn.execute(text("DELETE FROM patterns"))
             conn.execute(insert_stmt, db_records)
             
         print(f"\nSaved {len(top_20)} signals to the database.")

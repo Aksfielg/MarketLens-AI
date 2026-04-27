@@ -118,7 +118,7 @@ You MUST return ONLY a valid JSON object. Do not include any other text or markd
     """
 
     model = genai.GenerativeModel(
-        model_name='gemini-1.5-pro-latest',
+        model_name='gemini-2.5-pro',
         system_instruction=system_prompt,
     )
 

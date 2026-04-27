@@ -14,7 +14,7 @@ async def generate_video_script(body: dict):
     
     if GEMINI_KEY:
         genai.configure(api_key=GEMINI_KEY)
-        model = genai.GenerativeModel('gemini-1.5-flash')
+        model = genai.GenerativeModel('gemini-2.5-flash')
         
         signals_text = '\n'.join([f"- {s['symbol']}: {s['pattern']}, Win Rate {s['win_rate']}%, Conviction {s['conviction_score']}" for s in signals[:3]])
         
@@ -116,70 +116,233 @@ async def generate_narration(body: dict):
 
 @router.post("/api/generate-avatar-video")
 async def generate_avatar_video(body: dict):
-    D_ID_KEY = os.getenv('D_ID_API_KEY', '')
-    if not D_ID_KEY:
-        return JSONResponse({"error": "D_ID_API_KEY not set in .env"}, status_code=400)
-    
+    """
+    Generate avatar video using D-ID API.
+    The D-ID API key is already the full Basic credential (base64 encoded email:api_key).
+    Pass it directly as Authorization: Basic {key} — do NOT re-encode.
+    Falls back to local MoviePy render if D-ID fails.
+    """
+    import asyncio as _asyncio
+    import base64, uuid
+    from PIL import Image, ImageDraw, ImageFont
+
     script_text = body.get('script_text', 'Good morning investors! Welcome to MarketLens AI daily market update.')
-    
-    # D-ID uses Basic auth with key:
-    import base64
-    auth = base64.b64encode(f"{D_ID_KEY}:".encode()).decode()
-    
-    headers = {
-        "Authorization": f"Basic {auth}",
-        "Content-Type": "application/json"
-    }
-    
-    # Step 1: Create the talking video
-    try:
-        create_resp = requests.post(
-            "https://api.d-id.com/talks",
-            headers=headers,
-            json={
-                "source_url": "https://d-id-public-bucket.s3.amazonaws.com/alice.jpg",
-                "script": {
-                    "type": "text",
-                    "provider": {
-                        "type": "elevenlabs",
-                        "voice_id": "EXAVITQu4vr4xnSDxMaL"
-                    },
-                    "input": script_text[:500]  # D-ID has character limits
-                },
-                "config": {"fluent": True, "pad_audio": 0}
-            },
-            timeout=30
-        )
-        
-        if create_resp.status_code not in [200, 201]:
-            return JSONResponse({"error": f"D-ID create failed: {create_resp.status_code} - {create_resp.text[:200]}"})
-        
-        talk_id = create_resp.json().get('id')
-        if not talk_id:
-            return JSONResponse({"error": "No talk ID returned"})
-        
-        # Step 2: Poll for completion (max 60 seconds)
-        for attempt in range(12):
-            await asyncio.sleep(5)
-            status_resp = requests.get(
-                f"https://api.d-id.com/talks/{talk_id}",
+    signals = body.get('signals', [])
+    D_ID_KEY = os.getenv('D_ID_API_KEY', '')
+
+    # ── Try D-ID first ────────────────────────────────────────────────────────
+    if D_ID_KEY:
+        headers = {
+            # Key is ALREADY base64(email:password) — pass directly, no re-encoding
+            "Authorization": f"Basic {D_ID_KEY}",
+            "Content-Type": "application/json"
+        }
+        try:
+            create_resp = requests.post(
+                "https://api.d-id.com/talks",
                 headers=headers,
-                timeout=15
+                json={
+                    # alice.jpg works on free tier; or-Andrew.jpg causes 500
+                    "source_url": "https://d-id-public-bucket.s3.amazonaws.com/alice.jpg",
+                    "script": {
+                        "type": "text",
+                        "input": script_text[:500],
+                        # Microsoft neural TTS works on free tier;
+                        # ElevenLabs provider requires paid D-ID plan
+                        "provider": {
+                            "type": "microsoft",
+                            "voice_id": "en-US-JennyNeural"
+                        }
+                    },
+                    "config": {"fluent": True, "pad_audio": 0}
+                },
+                timeout=30
             )
-            status_data = status_resp.json()
-            status = status_data.get('status')
-            
-            if status == 'done':
-                video_url = status_data.get('result_url')
-                return JSONResponse({
-                    "success": True,
-                    "video_url": video_url,
-                    "talk_id": talk_id
-                })
-            elif status == 'error':
-                return JSONResponse({"error": f"D-ID rendering failed: {status_data.get('error', {})}"})
-        
-        return JSONResponse({"error": "Timeout after 60 seconds. Video may still be generating."})
-    
+            print(f"D-ID create status: {create_resp.status_code}")
+
+            if create_resp.status_code in [200, 201]:
+                talk_id = create_resp.json().get('id')
+                if talk_id:
+                    # Poll for completion (max 90 seconds)
+                    for _ in range(18):
+                        await _asyncio.sleep(5)
+                        status_resp = requests.get(
+                            f"https://api.d-id.com/talks/{talk_id}",
+                            headers=headers, timeout=15
+                        )
+                        status_data = status_resp.json()
+                        status = status_data.get('status')
+                        print(f"D-ID status: {status}")
+                        if status == 'done':
+                            return JSONResponse({
+                                "success": True,
+                                "video_url": status_data.get('result_url'),
+                                "source": "d-id"
+                            })
+                        elif status == 'error':
+                            print(f"D-ID error: {status_data.get('error')}")
+                            break
+            else:
+                print(f"D-ID create failed: {create_resp.status_code} {create_resp.text[:200]}")
+        except Exception as e:
+            print(f"D-ID exception: {e}")
+
+    # ── Fallback: Generate video locally with MoviePy + Pillow ────────────────
+    print("Falling back to local video generation...")
+
+    output_dir = os.path.join(os.path.dirname(__file__), '..', 'output')
+    os.makedirs(output_dir, exist_ok=True)
+    output_path = os.path.join(output_dir, f"avatar_{uuid.uuid4().hex[:8]}.mp4")
+    audio_path = None
+
+    # Generate ElevenLabs audio
+    ELEVEN_KEY = os.getenv('ELEVENLABS_API_KEY', '')
+    if ELEVEN_KEY:
+        try:
+            resp = requests.post(
+                "https://api.elevenlabs.io/v1/text-to-speech/EXAVITQu4vr4xnSDxMaL",
+                headers={"xi-api-key": ELEVEN_KEY, "Content-Type": "application/json"},
+                json={"text": script_text[:500], "model_id": "eleven_monolingual_v1",
+                      "voice_settings": {"stability": 0.6, "similarity_boost": 0.8}},
+                timeout=30
+            )
+            if resp.status_code == 200:
+                audio_path = os.path.join(output_dir, f"audio_{uuid.uuid4().hex[:8]}.mp3")
+                with open(audio_path, 'wb') as f:
+                    f.write(resp.content)
+        except Exception as e:
+            print(f"ElevenLabs error: {e}")
+
+    # Build animated video frames
+    W, H, FPS = 1280, 720, 24
+
+    def get_font(size):
+        for name in ["arialbd.ttf", "arial.ttf", "DejaVuSans-Bold.ttf", "DejaVuSans.ttf"]:
+            try:
+                return ImageFont.truetype(name, size)
+            except:
+                pass
+        return ImageFont.load_default()
+
+    def draw_frame(t, duration):
+        img = Image.new('RGB', (W, H))
+        draw = ImageDraw.Draw(img)
+        # Gradient background
+        for y in range(H):
+            frac = y / H
+            r = int(8 + 6 * frac)
+            g = int(6 + 4 * frac)
+            b = int(24 + 16 * frac)
+            draw.line([(0, y), (W, y)], fill=(r, g, b))
+
+        # Teal accent bar
+        bw = int(W * 0.6)
+        bx = (W - bw) // 2
+        draw.rectangle([bx, 0, bx + bw, 4], fill=(0, 212, 170))
+
+        # Logo
+        lf = get_font(26)
+        draw.text((44, 32), "MarketLens", font=lf, fill=(240, 240, 255))
+        try:
+            mw = lf.getlength("MarketLens")
+        except:
+            mw = 160
+        draw.text((44 + mw + 4, 36), "AI", font=get_font(16), fill=(124, 58, 237))
+
+        # LIVE dot
+        draw.ellipse([W - 88, 30, W - 75, 43], fill=(255, 50, 50))
+        draw.text((W - 68, 30), "LIVE", font=get_font(16), fill=(255, 255, 255))
+
+        # Script text (word-wrapped)
+        tf = get_font(46)
+        words = script_text.split()
+        lines, cur = [], []
+        for w in words:
+            test = ' '.join(cur + [w])
+            try:
+                tw = tf.getlength(test)
+            except:
+                tw = len(test) * 26
+            if tw < W - 120:
+                cur.append(w)
+            else:
+                lines.append(' '.join(cur))
+                cur = [w]
+        if cur:
+            lines.append(' '.join(cur))
+
+        total_h = len(lines[:4]) * 62
+        y0 = (H - total_h) // 2
+        for i, ln in enumerate(lines[:4]):
+            try:
+                tw = tf.getlength(ln)
+            except:
+                tw = len(ln) * 26
+            x = (W - tw) // 2
+            draw.text((x + 2, y0 + i * 62 + 2), ln, font=tf, fill=(0, 0, 0))
+            draw.text((x, y0 + i * 62), ln, font=tf, fill=(230, 230, 255))
+
+        # Signal pills
+        if signals:
+            pf = get_font(18)
+            px, py = 40, H - 90
+            for sig in signals[:4]:
+                sym = sig.get('symbol', '?')
+                score = int(sig.get('conviction_score', 0))
+                lbl = f"  {sym} {score}  "
+                try:
+                    pw = pf.getlength(lbl) + 16
+                except:
+                    pw = len(lbl) * 11
+                col = (0, 212, 170) if score > 70 else (245, 158, 11)
+                draw.rounded_rectangle([px, py, px + pw, py + 34], radius=17, outline=col, width=2)
+                draw.text((px + 8, py + 7), lbl, font=pf, fill=col)
+                px += int(pw) + 14
+
+        # Progress bar
+        prog = t / max(duration, 1)
+        draw.rectangle([0, H - 6, W, H], fill=(20, 20, 50))
+        draw.rectangle([0, H - 6, int(W * prog), H], fill=(0, 212, 170))
+        return img
+
+    try:
+        from moviepy.editor import VideoClip, AudioFileClip
+
+        if audio_path and os.path.exists(audio_path):
+            ac = AudioFileClip(audio_path)
+            dur = ac.duration
+            ac.close()
+        else:
+            dur = max(12, len(script_text.split()) * 0.45)
+
+        def make_frame(t):
+            import numpy as np
+            return np.array(draw_frame(t, dur))
+
+        clip = VideoClip(make_frame, duration=dur).set_fps(FPS)
+        if audio_path and os.path.exists(audio_path):
+            clip = clip.set_audio(AudioFileClip(audio_path))
+
+        clip.write_videofile(output_path, fps=FPS, codec='libx264',
+                             audio_codec='aac', preset='ultrafast', logger=None)
+        clip.close()
+
+        with open(output_path, 'rb') as f:
+            video_b64 = base64.b64encode(f.read()).decode('utf-8')
+
+        for p in [output_path, audio_path]:
+            try:
+                if p and os.path.exists(p):
+                    os.remove(p)
+            except:
+                pass
+
+        return JSONResponse({
+            "success": True,
+            "video_base64": video_b64,
+            "source": "local",
+            "duration": round(dur, 1)
+        })
+
     except Exception as e:
-        return JSONResponse({"error": str(e)})
+        return JSONResponse({"error": f"Video generation failed: {str(e)}"}, status_code=500)

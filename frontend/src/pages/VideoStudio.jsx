@@ -173,31 +173,44 @@ const VideoStudio = () => {
     return () => clearTimeout(timer);
   }, [videoReady, currentScene, isPaused, generatedScript]);
 
-  // Generate D-ID Avatar Video
+  // Generate Avatar Video (fully local — no D-ID)
   const generateAvatarVideo = async () => {
     setAvatarLoading(true);
     
-    // Combine all scene narrations into one script
     const fullScript = generatedScript
       .map(s => s.narration)
       .join('. ')
-      .slice(0, 500); // D-ID character limit
+      .slice(0, 500);
     
     try {
       const res = await fetch('http://localhost:8000/api/generate-avatar-video', {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
-        body: JSON.stringify({ script_text: fullScript })
+        body: JSON.stringify({ 
+          script_text: fullScript,
+          signals: currentSignals.slice(0, 4).map(s => ({
+            symbol: s.symbol,
+            conviction_score: s.conviction_score,
+            pattern: s.pattern,
+            win_rate: s.win_rate
+          }))
+        })
       });
       
       const data = await res.json();
-      if (data.video_url) {
+      if (data.video_base64) {
+        // Convert base64 to blob URL for in-browser playback
+        const bytes = Uint8Array.from(atob(data.video_base64), c => c.charCodeAt(0));
+        const blob = new Blob([bytes], { type: 'video/mp4' });
+        const blobUrl = URL.createObjectURL(blob);
+        setAvatarVideoUrl(blobUrl);
+      } else if (data.video_url) {
         setAvatarVideoUrl(data.video_url);
       } else {
         alert('Avatar video failed: ' + (data.error || 'Unknown error'));
       }
     } catch (err) {
-      alert('Failed to connect to backend. Is it running?');
+      alert('Failed to connect to backend: ' + err.message);
     }
     setAvatarLoading(false);
   };

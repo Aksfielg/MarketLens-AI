@@ -42,6 +42,7 @@ async def get_stock_price(symbol: str):
     try:
         ticker = yf.Ticker(ticker_symbol)
         hist = ticker.history(period="5d")
+        hist = hist.dropna(subset=['Close'])
         if hist.empty:
             return JSONResponse({"error": "No data"}, status_code=404)
         
@@ -93,6 +94,7 @@ async def get_stock_history(symbol: str, period: str = "1mo"):
     try:
         ticker = yf.Ticker(ticker_symbol)
         hist = ticker.history(period=yf_period)
+        hist = hist.dropna(subset=['Close'])
         
         candles = []
         for date, row in hist.iterrows():

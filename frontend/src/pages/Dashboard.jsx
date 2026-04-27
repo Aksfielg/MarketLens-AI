@@ -123,13 +123,7 @@ View full analysis: ${window.location.origin}/stock/${signal.symbol}
     setTimeout(() => document.body.removeChild(toast), 2000);
   };
 
-  // Demo banner logic
-  useEffect(() => {
-    const visits = parseInt(localStorage.getItem('dashboardVisits') || '0') + 1;
-    setVisitCount(visits);
-    localStorage.setItem('dashboardVisits', visits.toString());
-    setShowBanner(visits <= 3);
-  }, []);
+  // Banner logic removed
 
   // Fetch real prices for all signals
   const fetchAllPrices = async (signalsData) => {
@@ -357,18 +351,6 @@ View full analysis: ${window.location.origin}/stock/${signal.symbol}
         </div>
       </div>
 
-      {/* Demo Mode Banner */}
-      {showBanner && (
-        <div style={{background:'rgba(124,58,237,0.15)', borderBottom:'1px solid rgba(124,58,237,0.3)', padding:'8px 24px', textAlign:'center', fontSize:'13px', color:'#A78BFA'}}>
-          🎯 Demo Mode — Showing signals from {new Date().toLocaleDateString('en-IN')}. MarketLens AI scanned 200 NSE stocks this morning.
-          <button 
-            onClick={() => setShowBanner(false)} 
-            style={{marginLeft:'16px', color:'#A78BFA', background:'none', border:'none', cursor:'pointer', fontSize:'18px'}}
-          >
-            ×
-          </button>
-        </div>
-      )}
 
       {/* Onboarding Tour */}
       <OnboardingTour />

@@ -103,8 +103,8 @@ Write a 3-sentence explanation a beginner can understand, then 1 sentence of ris
         print("[Explainer] No Gemini client — returning fallback.")
         return fallback
 
-    # Try model chain with exponential backoff: gemini-2.0-flash -> gemini-1.5-flash-8b
-    MODELS_TO_TRY = ["gemini-2.0-flash", "gemini-1.5-flash-8b"]
+    # Try model chain with exponential backoff: gemini-2.5-flash -> gemini-2.0-flash-lite
+    MODELS_TO_TRY = ["gemini-2.5-flash", "gemini-2.0-flash-lite"]
     MAX_RETRIES = 3
     response = None
 
