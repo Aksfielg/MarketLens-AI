@@ -154,11 +154,11 @@ def process_and_save():
             print("Insert completed successfully.")
         else:
             print("No valid records to insert after cleaning. Triggering fallback.")
-            insert_mock_bulk_deals(engine)
+            # insert_mock_bulk_deals(engine)
 
     except Exception as e:
         print(f"Fetch failed with error: {e}")
-        insert_mock_bulk_deals(engine)
+        # insert_mock_bulk_deals(engine)
 
 if __name__ == "__main__":
     process_and_save()
