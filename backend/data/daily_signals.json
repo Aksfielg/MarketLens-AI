@@ -2,780 +2,668 @@
   "date": "2026-04-28",
   "signals": [
     {
-      "symbol": "INFY",
+      "symbol": "SUNPHARMA",
       "pattern": "Double Bottom",
-      "conviction_score": 88.33,
-      "key_price": 1265.699951171875,
+      "conviction_score": 85.82,
+      "key_price": 1737.9000244140625,
       "signal_type": "bullish"
     },
     {
       "symbol": "SUNPHARMA",
-      "pattern": "Double Bottom",
-      "conviction_score": 85.2,
-      "key_price": 1652.4000244140625,
-      "signal_type": "bullish"
-    },
-    {
-      "symbol": "SBILIFE",
-      "pattern": "Double Bottom",
-      "conviction_score": 84.29,
-      "key_price": 1889.0,
-      "signal_type": "bullish"
-    },
-    {
-      "symbol": "HCLTECH",
-      "pattern": "Double Bottom",
-      "conviction_score": 83.54,
-      "key_price": 1390.871981814991,
-      "signal_type": "bullish"
-    },
-    {
-      "symbol": "ADANIGREEN",
-      "pattern": "Double Bottom",
-      "conviction_score": 78.43,
-      "key_price": 814.75,
-      "signal_type": "bullish"
-    },
-    {
-      "symbol": "GODREJCP",
-      "pattern": "Double Bottom",
-      "conviction_score": 77.91,
-      "key_price": 1039.5,
-      "signal_type": "bullish"
-    },
-    {
-      "symbol": "COFORGE",
-      "pattern": "Double Bottom",
-      "conviction_score": 76.1,
-      "key_price": 1208.199951171875,
-      "signal_type": "bullish"
-    },
-    {
-      "symbol": "DRREDDY",
-      "pattern": "Double Bottom",
-      "conviction_score": 75.87,
-      "key_price": 1208.0999755859375,
-      "signal_type": "bullish"
-    },
-    {
-      "symbol": "COALINDIA",
-      "pattern": "Double Bottom",
-      "conviction_score": 74.7,
-      "key_price": 438.7999877929688,
-      "signal_type": "bullish"
-    },
-    {
-      "symbol": "TECHM",
-      "pattern": "Double Bottom",
-      "conviction_score": 74.08,
-      "key_price": 1404.0999755859375,
-      "signal_type": "bullish"
-    },
-    {
-      "symbol": "APOLLOHOSP",
-      "pattern": "Double Bottom",
-      "conviction_score": 71.42,
-      "key_price": 7601.0,
-      "signal_type": "bullish"
-    },
-    {
-      "symbol": "PERSISTENT",
-      "pattern": "Double Bottom",
-      "conviction_score": 70.7,
-      "key_price": 5271.10009765625,
-      "signal_type": "bullish"
-    },
-    {
-      "symbol": "COALINDIA",
       "pattern": "MACD Crossover",
-      "conviction_score": 70.43,
-      "key_price": 456.0,
-      "signal_type": "bullish"
-    },
-    {
-      "symbol": "CANBK",
-      "pattern": "Double Bottom",
-      "conviction_score": 70.03,
-      "key_price": 134.60000610351562,
-      "signal_type": "bullish"
-    },
-    {
-      "symbol": "TCS",
-      "pattern": "Double Bottom",
-      "conviction_score": 69.97,
-      "key_price": 2503.60009765625,
-      "signal_type": "bullish"
-    },
-    {
-      "symbol": "BANKBARODA",
-      "pattern": "Double Bottom",
-      "conviction_score": 69.44,
-      "key_price": 266.70001220703125,
-      "signal_type": "bullish"
-    },
-    {
-      "symbol": "FEDERALBNK",
-      "pattern": "Double Bottom",
-      "conviction_score": 68.52,
-      "key_price": 281.6000061035156,
-      "signal_type": "bullish"
-    },
-    {
-      "symbol": "ALKEM",
-      "pattern": "Double Bottom",
-      "conviction_score": 68.49,
-      "key_price": 5308.5,
-      "signal_type": "bullish"
-    },
-    {
-      "symbol": "WIPRO",
-      "pattern": "Double Bottom",
-      "conviction_score": 68.43,
-      "key_price": 202.1999969482422,
-      "signal_type": "bullish"
-    },
-    {
-      "symbol": "HEROMOTOCO",
-      "pattern": "Double Bottom",
-      "conviction_score": 68.42,
-      "key_price": 5129.5,
-      "signal_type": "bullish"
-    },
-    {
-      "symbol": "CIPLA",
-      "pattern": "Double Bottom",
-      "conviction_score": 68.07,
-      "key_price": 1222.0,
-      "signal_type": "bullish"
-    },
-    {
-      "symbol": "TORNTPHARM",
-      "pattern": "Double Bottom",
-      "conviction_score": 67.95,
-      "key_price": 4065.10009765625,
-      "signal_type": "bullish"
-    },
-    {
-      "symbol": "NYKAA",
-      "pattern": "Double Bottom",
-      "conviction_score": 67.94,
-      "key_price": 258.20001220703125,
-      "signal_type": "bullish"
-    },
-    {
-      "symbol": "MARICO",
-      "pattern": "Double Bottom",
-      "conviction_score": 66.78,
-      "key_price": 740.4000244140625,
-      "signal_type": "bullish"
-    },
-    {
-      "symbol": "EICHERMOT",
-      "pattern": "Double Bottom",
-      "conviction_score": 66.33,
-      "key_price": 7052.0,
-      "signal_type": "bullish"
-    },
-    {
-      "symbol": "SBIN",
-      "pattern": "Double Bottom",
-      "conviction_score": 66.09,
-      "key_price": 1082.199951171875,
-      "signal_type": "bullish"
-    },
-    {
-      "symbol": "HAVELLS",
-      "pattern": "Double Bottom",
-      "conviction_score": 65.63,
-      "key_price": 1229.0,
-      "signal_type": "bullish"
-    },
-    {
-      "symbol": "ONGC",
-      "pattern": "Double Bottom",
-      "conviction_score": 65.39,
-      "key_price": 282.0,
-      "signal_type": "bullish"
-    },
-    {
-      "symbol": "TITAN",
-      "pattern": "Double Bottom",
-      "conviction_score": 65.38,
-      "key_price": 4330.0,
-      "signal_type": "bullish"
-    },
-    {
-      "symbol": "NESTLEIND",
-      "pattern": "Double Bottom",
-      "conviction_score": 64.27,
-      "key_price": 1382.0999755859375,
-      "signal_type": "bullish"
-    },
-    {
-      "symbol": "BRITANNIA",
-      "pattern": "Double Bottom",
-      "conviction_score": 64.21,
-      "key_price": 5640.5,
-      "signal_type": "bullish"
-    },
-    {
-      "symbol": "BAJAJ-AUTO",
-      "pattern": "Double Bottom",
-      "conviction_score": 63.29,
-      "key_price": 9477.0,
-      "signal_type": "bullish"
-    },
-    {
-      "symbol": "MUTHOOTFIN",
-      "pattern": "Double Bottom",
-      "conviction_score": 63.11,
-      "key_price": 3408.182180729579,
-      "signal_type": "bullish"
-    },
-    {
-      "symbol": "AMBUJACEM",
-      "pattern": "Double Bottom",
-      "conviction_score": 62.96,
-      "key_price": 427.5,
+      "conviction_score": 82.0,
+      "key_price": 1733.5,
       "signal_type": "bullish"
     },
     {
       "symbol": "GRASIM",
       "pattern": "Double Bottom",
-      "conviction_score": 62.83,
+      "conviction_score": 81.12,
       "key_price": 2727.0,
-      "signal_type": "bullish"
-    },
-    {
-      "symbol": "IPCALAB",
-      "pattern": "Double Bottom",
-      "conviction_score": 62.73,
-      "key_price": 1488.300048828125,
-      "signal_type": "bullish"
-    },
-    {
-      "symbol": "LT",
-      "pattern": "Double Bottom",
-      "conviction_score": 62.47,
-      "key_price": 3978.5,
-      "signal_type": "bullish"
-    },
-    {
-      "symbol": "KOTAKBANK",
-      "pattern": "Double Bottom",
-      "conviction_score": 62.23,
-      "key_price": 365.6000061035156,
-      "signal_type": "bullish"
-    },
-    {
-      "symbol": "MPHASIS",
-      "pattern": "Double Bottom",
-      "conviction_score": 62.11,
-      "key_price": 2270.39990234375,
-      "signal_type": "bullish"
-    },
-    {
-      "symbol": "ITC",
-      "pattern": "Double Bottom",
-      "conviction_score": 61.94,
-      "key_price": 298.1000061035156,
       "signal_type": "bullish"
     },
     {
       "symbol": "INDUSINDBK",
       "pattern": "Double Bottom",
-      "conviction_score": 61.91,
-      "key_price": 851.0,
-      "signal_type": "bullish"
-    },
-    {
-      "symbol": "KOTAKBANK",
-      "pattern": "RSI Divergence",
-      "conviction_score": 61.44,
-      "key_price": 345.5,
-      "signal_type": "bullish"
-    },
-    {
-      "symbol": "HDFCLIFE",
-      "pattern": "Double Bottom",
-      "conviction_score": 61.11,
-      "key_price": 602.7999877929688,
-      "signal_type": "bullish"
-    },
-    {
-      "symbol": "ADANIGREEN",
-      "pattern": "Breakout",
-      "conviction_score": 60.88,
-      "key_price": 1235.800048828125,
-      "signal_type": "bullish"
-    },
-    {
-      "symbol": "DIVISLAB",
-      "pattern": "Double Bottom",
-      "conviction_score": 60.75,
-      "key_price": 6187.5,
-      "signal_type": "bullish"
-    },
-    {
-      "symbol": "MOTHERSON",
-      "pattern": "Double Bottom",
-      "conviction_score": 60.71,
-      "key_price": 120.80999755859376,
-      "signal_type": "bullish"
-    },
-    {
-      "symbol": "MARUTI",
-      "pattern": "Double Bottom",
-      "conviction_score": 60.31,
-      "key_price": 12966.0,
-      "signal_type": "bullish"
-    },
-    {
-      "symbol": "JSWSTEEL",
-      "pattern": "Double Bottom",
-      "conviction_score": 59.98,
-      "key_price": 1189.300048828125,
-      "signal_type": "bullish"
-    },
-    {
-      "symbol": "DABUR",
-      "pattern": "Double Bottom",
-      "conviction_score": 59.31,
-      "key_price": 422.6499938964844,
-      "signal_type": "bullish"
-    },
-    {
-      "symbol": "IRCTC",
-      "pattern": "Double Bottom",
-      "conviction_score": 59.26,
-      "key_price": 525.7000122070312,
-      "signal_type": "bullish"
-    },
-    {
-      "symbol": "JUBLFOOD",
-      "pattern": "Double Bottom",
-      "conviction_score": 59.22,
-      "key_price": 441.0,
-      "signal_type": "bullish"
-    },
-    {
-      "symbol": "ULTRACEMCO",
-      "pattern": "Double Bottom",
-      "conviction_score": 59.11,
-      "key_price": 11800.0,
-      "signal_type": "bullish"
-    },
-    {
-      "symbol": "TATAPOWER",
-      "pattern": "Double Bottom",
-      "conviction_score": 59.02,
-      "key_price": 390.25,
-      "signal_type": "bullish"
-    },
-    {
-      "symbol": "BHARTIARTL",
-      "pattern": "RSI Divergence",
-      "conviction_score": 59.01,
-      "key_price": 1746.9000244140625,
+      "conviction_score": 80.8,
+      "key_price": 839.0,
       "signal_type": "bullish"
     },
     {
       "symbol": "RELIANCE",
       "pattern": "Double Bottom",
-      "conviction_score": 58.56,
-      "key_price": 1310.0,
+      "conviction_score": 77.62,
+      "key_price": 1311.0,
+      "signal_type": "bullish"
+    },
+    {
+      "symbol": "COALINDIA",
+      "pattern": "Double Bottom",
+      "conviction_score": 77.28,
+      "key_price": 450.6499938964844,
+      "signal_type": "bullish"
+    },
+    {
+      "symbol": "ONGC",
+      "pattern": "Double Bottom",
+      "conviction_score": 76.97,
+      "key_price": 283.8999938964844,
+      "signal_type": "bullish"
+    },
+    {
+      "symbol": "AXISBANK",
+      "pattern": "Double Bottom",
+      "conviction_score": 73.81,
+      "key_price": 1315.300048828125,
+      "signal_type": "bullish"
+    },
+    {
+      "symbol": "HCLTECH",
+      "pattern": "Double Bottom",
+      "conviction_score": 73.56,
+      "key_price": 1198.0999755859375,
       "signal_type": "bullish"
     },
     {
       "symbol": "TATACONSUM",
       "pattern": "Double Bottom",
-      "conviction_score": 58.52,
+      "conviction_score": 72.19,
       "key_price": 1073.800048828125,
       "signal_type": "bullish"
     },
     {
-      "symbol": "TATASTEEL",
-      "pattern": "Double Bottom",
-      "conviction_score": 58.18,
-      "key_price": 201.5,
-      "signal_type": "bullish"
-    },
-    {
-      "symbol": "BHARTIARTL",
-      "pattern": "Double Bottom",
-      "conviction_score": 58.06,
-      "key_price": 1823.199951171875,
-      "signal_type": "bullish"
-    },
-    {
-      "symbol": "BPCL",
-      "pattern": "Double Bottom",
-      "conviction_score": 58.0,
-      "key_price": 284.25,
-      "signal_type": "bullish"
-    },
-    {
-      "symbol": "HDFCBANK",
-      "pattern": "RSI Divergence",
-      "conviction_score": 57.94,
-      "key_price": 726.6500244140625,
-      "signal_type": "bullish"
-    },
-    {
-      "symbol": "LTTS",
-      "pattern": "Double Bottom",
-      "conviction_score": 57.39,
-      "key_price": 3438.0,
-      "signal_type": "bullish"
-    },
-    {
-      "symbol": "IDFCFIRSTB",
-      "pattern": "Double Bottom",
-      "conviction_score": 57.24,
-      "key_price": 63.2400016784668,
-      "signal_type": "bullish"
-    },
-    {
-      "symbol": "BAJAJFINSV",
-      "pattern": "Double Bottom",
-      "conviction_score": 57.02,
-      "key_price": 1748.300048828125,
-      "signal_type": "bullish"
-    },
-    {
-      "symbol": "PIDILITIND",
-      "pattern": "Double Bottom",
-      "conviction_score": 56.98,
-      "key_price": 1314.300048828125,
-      "signal_type": "bullish"
-    },
-    {
-      "symbol": "TATAPOWER",
-      "pattern": "Golden Cross",
-      "conviction_score": 56.87,
-      "key_price": 436.0499877929688,
-      "signal_type": "bullish"
-    },
-    {
-      "symbol": "MANAPPURAM",
-      "pattern": "Double Bottom",
-      "conviction_score": 56.34,
-      "key_price": 258.45001220703125,
-      "signal_type": "bullish"
-    },
-    {
-      "symbol": "IPCALAB",
+      "symbol": "ONGC",
       "pattern": "MACD Crossover",
-      "conviction_score": 56.18,
-      "key_price": 1526.0999755859375,
+      "conviction_score": 72.0,
+      "key_price": 301.29998779296875,
       "signal_type": "bullish"
     },
     {
-      "symbol": "DMART",
+      "symbol": "COALINDIA",
+      "pattern": "MACD Crossover",
+      "conviction_score": 71.45,
+      "key_price": 456.0,
+      "signal_type": "bullish"
+    },
+    {
+      "symbol": "INFY",
       "pattern": "Double Bottom",
-      "conviction_score": 56.17,
-      "key_price": 4284.2001953125,
+      "conviction_score": 70.5,
+      "key_price": 1152.199951171875,
       "signal_type": "bullish"
     },
     {
-      "symbol": "ICICIBANK",
+      "symbol": "APOLLOHOSP",
       "pattern": "Double Bottom",
-      "conviction_score": 56.16,
-      "key_price": 1334.0,
-      "signal_type": "bullish"
-    },
-    {
-      "symbol": "IOC",
-      "pattern": "Double Bottom",
-      "conviction_score": 55.97,
-      "key_price": 137.55999755859375,
-      "signal_type": "bullish"
-    },
-    {
-      "symbol": "GODREJCP",
-      "pattern": "RSI Divergence",
-      "conviction_score": 55.87,
-      "key_price": 967.0499877929688,
-      "signal_type": "bullish"
-    },
-    {
-      "symbol": "ADANIPORTS",
-      "pattern": "Double Bottom",
-      "conviction_score": 55.6,
-      "key_price": 1421.0,
-      "signal_type": "bullish"
-    },
-    {
-      "symbol": "HDFCBANK",
-      "pattern": "Double Bottom",
-      "conviction_score": 55.44,
-      "key_price": 787.3499755859375,
-      "signal_type": "bullish"
-    },
-    {
-      "symbol": "AUROPHARMA",
-      "pattern": "Double Bottom",
-      "conviction_score": 55.35,
-      "key_price": 1333.0,
-      "signal_type": "bullish"
-    },
-    {
-      "symbol": "POWERGRID",
-      "pattern": "Double Bottom",
-      "conviction_score": 55.27,
-      "key_price": 316.0,
-      "signal_type": "bullish"
-    },
-    {
-      "symbol": "ABB",
-      "pattern": "Double Bottom",
-      "conviction_score": 55.15,
-      "key_price": 6732.5,
-      "signal_type": "bullish"
-    },
-    {
-      "symbol": "CHOLAFIN",
-      "pattern": "Double Bottom",
-      "conviction_score": 54.43,
-      "key_price": 1502.0,
-      "signal_type": "bullish"
-    },
-    {
-      "symbol": "AXISBANK",
-      "pattern": "RSI Divergence",
-      "conviction_score": 54.35,
-      "key_price": 1150.300048828125,
-      "signal_type": "bullish"
-    },
-    {
-      "symbol": "BIOCON",
-      "pattern": "Double Bottom",
-      "conviction_score": 54.34,
-      "key_price": 347.0,
-      "signal_type": "bullish"
-    },
-    {
-      "symbol": "SIEMENS",
-      "pattern": "Double Bottom",
-      "conviction_score": 54.19,
-      "key_price": 3101.0,
-      "signal_type": "bullish"
-    },
-    {
-      "symbol": "HINDALCO",
-      "pattern": "Double Bottom",
-      "conviction_score": 54.0,
-      "key_price": 965.5999755859376,
-      "signal_type": "bullish"
-    },
-    {
-      "symbol": "PNB",
-      "pattern": "Double Bottom",
-      "conviction_score": 53.76,
-      "key_price": 111.56999969482422,
-      "signal_type": "bullish"
-    },
-    {
-      "symbol": "PAYTM",
-      "pattern": "Double Bottom",
-      "conviction_score": 53.67,
-      "key_price": 1082.5,
-      "signal_type": "bullish"
-    },
-    {
-      "symbol": "COLPAL",
-      "pattern": "Double Bottom",
-      "conviction_score": 53.39,
-      "key_price": 2057.60009765625,
-      "signal_type": "bullish"
-    },
-    {
-      "symbol": "CANBK",
-      "pattern": "RSI Divergence",
-      "conviction_score": 53.13,
-      "key_price": 121.79000091552734,
-      "signal_type": "bullish"
-    },
-    {
-      "symbol": "BERGEPAINT",
-      "pattern": "Double Bottom",
-      "conviction_score": 52.99,
-      "key_price": 428.9500122070313,
-      "signal_type": "bullish"
-    },
-    {
-      "symbol": "SHREECEM",
-      "pattern": "Double Bottom",
-      "conviction_score": 52.58,
-      "key_price": 23600.0,
-      "signal_type": "bullish"
-    },
-    {
-      "symbol": "NTPC",
-      "pattern": "Double Bottom",
-      "conviction_score": 52.4,
-      "key_price": 393.2000122070313,
-      "signal_type": "bullish"
-    },
-    {
-      "symbol": "AXISBANK",
-      "pattern": "Double Bottom",
-      "conviction_score": 51.93,
-      "key_price": 1315.300048828125,
-      "signal_type": "bullish"
-    },
-    {
-      "symbol": "BOSCHLTD",
-      "pattern": "Double Bottom",
-      "conviction_score": 51.27,
-      "key_price": 36415.0,
-      "signal_type": "bullish"
-    },
-    {
-      "symbol": "UBL",
-      "pattern": "Double Bottom",
-      "conviction_score": 49.7,
-      "key_price": 1537.0,
-      "signal_type": "bullish"
-    },
-    {
-      "symbol": "BAJFINANCE",
-      "pattern": "Double Bottom",
-      "conviction_score": 49.69,
-      "key_price": 909.3499755859376,
-      "signal_type": "bullish"
-    },
-    {
-      "symbol": "TRENT",
-      "pattern": "Double Bottom",
-      "conviction_score": 49.17,
-      "key_price": 3813.0,
-      "signal_type": "bullish"
-    },
-    {
-      "symbol": "HINDUNILVR",
-      "pattern": "Double Bottom",
-      "conviction_score": 48.57,
-      "key_price": 2113.5,
-      "signal_type": "bullish"
-    },
-    {
-      "symbol": "BAJAJFINSV",
-      "pattern": "RSI Divergence",
-      "conviction_score": 47.94,
-      "key_price": 1597.0,
-      "signal_type": "bullish"
-    },
-    {
-      "symbol": "EICHERMOT",
-      "pattern": "RSI Divergence",
-      "conviction_score": 46.72,
-      "key_price": 6442.0,
+      "conviction_score": 70.26,
+      "key_price": 7601.0,
       "signal_type": "bullish"
     },
     {
       "symbol": "ADANIENT",
       "pattern": "Double Bottom",
-      "conviction_score": 45.88,
+      "conviction_score": 70.04,
       "key_price": 2221.800048828125,
       "signal_type": "bullish"
     },
     {
-      "symbol": "GAIL",
-      "pattern": "Double Bottom",
-      "conviction_score": 45.45,
-      "key_price": 148.5,
-      "signal_type": "bullish"
-    },
-    {
-      "symbol": "CONCOR",
-      "pattern": "Double Bottom",
-      "conviction_score": 45.37,
-      "key_price": 467.5,
-      "signal_type": "bullish"
-    },
-    {
-      "symbol": "POLICYBZR",
-      "pattern": "Double Bottom",
-      "conviction_score": 44.04,
-      "key_price": 1582.0,
-      "signal_type": "bullish"
-    },
-    {
-      "symbol": "HINDUNILVR",
-      "pattern": "RSI Divergence",
-      "conviction_score": 42.92,
-      "key_price": 2022.5,
-      "signal_type": "bullish"
-    },
-    {
       "symbol": "ALKEM",
-      "pattern": "RSI Divergence",
-      "conviction_score": 40.98,
-      "key_price": 5075.0,
+      "pattern": "Double Bottom",
+      "conviction_score": 70.02,
+      "key_price": 5193.5,
+      "signal_type": "bullish"
+    },
+    {
+      "symbol": "MARUTI",
+      "pattern": "Double Bottom",
+      "conviction_score": 69.28,
+      "key_price": 12978.0,
+      "signal_type": "bullish"
+    },
+    {
+      "symbol": "TORNTPHARM",
+      "pattern": "Double Bottom",
+      "conviction_score": 69.15,
+      "key_price": 4065.10009765625,
+      "signal_type": "bullish"
+    },
+    {
+      "symbol": "CANBK",
+      "pattern": "Double Bottom",
+      "conviction_score": 68.71,
+      "key_price": 138.14999389648438,
+      "signal_type": "bullish"
+    },
+    {
+      "symbol": "EICHERMOT",
+      "pattern": "Double Bottom",
+      "conviction_score": 68.24,
+      "key_price": 7049.0,
+      "signal_type": "bullish"
+    },
+    {
+      "symbol": "MANAPPURAM",
+      "pattern": "Double Bottom",
+      "conviction_score": 67.84,
+      "key_price": 285.1499938964844,
+      "signal_type": "bullish"
+    },
+    {
+      "symbol": "TATAPOWER",
+      "pattern": "Double Bottom",
+      "conviction_score": 67.56,
+      "key_price": 426.0,
+      "signal_type": "bullish"
+    },
+    {
+      "symbol": "FEDERALBNK",
+      "pattern": "Double Bottom",
+      "conviction_score": 66.98,
+      "key_price": 291.25,
+      "signal_type": "bullish"
+    },
+    {
+      "symbol": "SBILIFE",
+      "pattern": "Double Bottom",
+      "conviction_score": 66.95,
+      "key_price": 1759.0,
+      "signal_type": "bullish"
+    },
+    {
+      "symbol": "PERSISTENT",
+      "pattern": "Double Bottom",
+      "conviction_score": 66.89,
+      "key_price": 4734.0,
+      "signal_type": "bullish"
+    },
+    {
+      "symbol": "BAJAJ-AUTO",
+      "pattern": "Double Bottom",
+      "conviction_score": 66.44,
+      "key_price": 9477.0,
+      "signal_type": "bullish"
+    },
+    {
+      "symbol": "HEROMOTOCO",
+      "pattern": "Double Bottom",
+      "conviction_score": 66.23,
+      "key_price": 4941.5,
+      "signal_type": "bullish"
+    },
+    {
+      "symbol": "NESTLEIND",
+      "pattern": "Double Bottom",
+      "conviction_score": 66.15,
+      "key_price": 1382.0999755859375,
+      "signal_type": "bullish"
+    },
+    {
+      "symbol": "IPCALAB",
+      "pattern": "Double Bottom",
+      "conviction_score": 65.26,
+      "key_price": 1488.300048828125,
+      "signal_type": "bullish"
+    },
+    {
+      "symbol": "BIOCON",
+      "pattern": "Double Bottom",
+      "conviction_score": 65.1,
+      "key_price": 348.5,
+      "signal_type": "bullish"
+    },
+    {
+      "symbol": "ULTRACEMCO",
+      "pattern": "Double Bottom",
+      "conviction_score": 65.09,
+      "key_price": 11800.0,
+      "signal_type": "bullish"
+    },
+    {
+      "symbol": "SBIN",
+      "pattern": "Double Bottom",
+      "conviction_score": 64.31,
+      "key_price": 1082.199951171875,
+      "signal_type": "bullish"
+    },
+    {
+      "symbol": "HDFCLIFE",
+      "pattern": "Double Bottom",
+      "conviction_score": 64.09,
+      "key_price": 585.5999755859375,
+      "signal_type": "bullish"
+    },
+    {
+      "symbol": "BHARTIARTL",
+      "pattern": "Double Bottom",
+      "conviction_score": 64.07,
+      "key_price": 1807.300048828125,
+      "signal_type": "bullish"
+    },
+    {
+      "symbol": "MARICO",
+      "pattern": "Double Bottom",
+      "conviction_score": 63.98,
+      "key_price": 740.4000244140625,
+      "signal_type": "bullish"
+    },
+    {
+      "symbol": "TCS",
+      "pattern": "Double Bottom",
+      "conviction_score": 63.8,
+      "key_price": 2388.800048828125,
+      "signal_type": "bullish"
+    },
+    {
+      "symbol": "TATASTEEL",
+      "pattern": "Double Bottom",
+      "conviction_score": 63.43,
+      "key_price": 208.6000061035156,
+      "signal_type": "bullish"
+    },
+    {
+      "symbol": "TITAN",
+      "pattern": "Double Bottom",
+      "conviction_score": 63.03,
+      "key_price": 4361.39990234375,
+      "signal_type": "bullish"
+    },
+    {
+      "symbol": "IRCTC",
+      "pattern": "Double Bottom",
+      "conviction_score": 62.81,
+      "key_price": 539.2000122070312,
+      "signal_type": "bullish"
+    },
+    {
+      "symbol": "ONGC",
+      "pattern": "Breakout",
+      "conviction_score": 62.38,
+      "key_price": 301.29998779296875,
+      "signal_type": "bullish"
+    },
+    {
+      "symbol": "MOTHERSON",
+      "pattern": "Double Bottom",
+      "conviction_score": 61.9,
+      "key_price": 125.33000183105467,
+      "signal_type": "bullish"
+    },
+    {
+      "symbol": "LT",
+      "pattern": "Double Bottom",
+      "conviction_score": 61.59,
+      "key_price": 3978.5,
+      "signal_type": "bullish"
+    },
+    {
+      "symbol": "MUTHOOTFIN",
+      "pattern": "Double Bottom",
+      "conviction_score": 61.49,
+      "key_price": 3443.300048828125,
+      "signal_type": "bullish"
+    },
+    {
+      "symbol": "BANKBARODA",
+      "pattern": "Double Bottom",
+      "conviction_score": 61.05,
+      "key_price": 269.54998779296875,
+      "signal_type": "bullish"
+    },
+    {
+      "symbol": "PNB",
+      "pattern": "Double Bottom",
+      "conviction_score": 60.83,
+      "key_price": 111.56999969482422,
+      "signal_type": "bullish"
+    },
+    {
+      "symbol": "HINDALCO",
+      "pattern": "Double Bottom",
+      "conviction_score": 60.61,
+      "key_price": 1027.550048828125,
+      "signal_type": "bullish"
+    },
+    {
+      "symbol": "TECHM",
+      "pattern": "Double Bottom",
+      "conviction_score": 60.47,
+      "key_price": 1347.4000244140625,
+      "signal_type": "bullish"
+    },
+    {
+      "symbol": "BAJAJFINSV",
+      "pattern": "Double Bottom",
+      "conviction_score": 60.39,
+      "key_price": 1757.300048828125,
+      "signal_type": "bullish"
+    },
+    {
+      "symbol": "UBL",
+      "pattern": "Double Bottom",
+      "conviction_score": 60.08,
+      "key_price": 1465.0,
+      "signal_type": "bullish"
+    },
+    {
+      "symbol": "DRREDDY",
+      "pattern": "Double Bottom",
+      "conviction_score": 59.99,
+      "key_price": 1208.0999755859375,
       "signal_type": "bullish"
     },
     {
       "symbol": "BPCL",
-      "pattern": "RSI Divergence",
-      "conviction_score": 39.87,
-      "key_price": 266.6000061035156,
+      "pattern": "Double Bottom",
+      "conviction_score": 59.69,
+      "key_price": 300.1499938964844,
       "signal_type": "bullish"
     },
     {
-      "symbol": "PAGEIND",
+      "symbol": "WIPRO",
       "pattern": "Double Bottom",
-      "conviction_score": 39.6,
-      "key_price": 37270.0,
+      "conviction_score": 59.64,
+      "key_price": 197.8800048828125,
+      "signal_type": "bullish"
+    },
+    {
+      "symbol": "JUBLFOOD",
+      "pattern": "Double Bottom",
+      "conviction_score": 59.23,
+      "key_price": 441.0,
+      "signal_type": "bullish"
+    },
+    {
+      "symbol": "HAVELLS",
+      "pattern": "Double Bottom",
+      "conviction_score": 59.17,
+      "key_price": 1233.0,
+      "signal_type": "bullish"
+    },
+    {
+      "symbol": "DIVISLAB",
+      "pattern": "Double Bottom",
+      "conviction_score": 58.52,
+      "key_price": 6187.5,
+      "signal_type": "bullish"
+    },
+    {
+      "symbol": "ADANIGREEN",
+      "pattern": "Double Bottom",
+      "conviction_score": 58.42,
+      "key_price": 814.75,
+      "signal_type": "bullish"
+    },
+    {
+      "symbol": "ICICIBANK",
+      "pattern": "Double Bottom",
+      "conviction_score": 58.25,
+      "key_price": 1334.0,
+      "signal_type": "bullish"
+    },
+    {
+      "symbol": "HDFCBANK",
+      "pattern": "Double Bottom",
+      "conviction_score": 58.05,
+      "key_price": 777.0,
+      "signal_type": "bullish"
+    },
+    {
+      "symbol": "ITC",
+      "pattern": "Double Bottom",
+      "conviction_score": 57.95,
+      "key_price": 301.1000061035156,
+      "signal_type": "bullish"
+    },
+    {
+      "symbol": "IDFCFIRSTB",
+      "pattern": "Double Bottom",
+      "conviction_score": 57.77,
+      "key_price": 66.69000244140625,
+      "signal_type": "bullish"
+    },
+    {
+      "symbol": "SHREECEM",
+      "pattern": "Double Bottom",
+      "conviction_score": 57.53,
+      "key_price": 24815.0,
+      "signal_type": "bullish"
+    },
+    {
+      "symbol": "JSWSTEEL",
+      "pattern": "Double Bottom",
+      "conviction_score": 57.08,
+      "key_price": 1246.5,
+      "signal_type": "bullish"
+    },
+    {
+      "symbol": "KOTAKBANK",
+      "pattern": "Double Bottom",
+      "conviction_score": 57.01,
+      "key_price": 367.6499938964844,
+      "signal_type": "bullish"
+    },
+    {
+      "symbol": "BRITANNIA",
+      "pattern": "Double Bottom",
+      "conviction_score": 56.48,
+      "key_price": 5640.5,
+      "signal_type": "bullish"
+    },
+    {
+      "symbol": "PAYTM",
+      "pattern": "Double Bottom",
+      "conviction_score": 55.91,
+      "key_price": 1051.0999755859375,
+      "signal_type": "bullish"
+    },
+    {
+      "symbol": "COFORGE",
+      "pattern": "Double Bottom",
+      "conviction_score": 55.37,
+      "key_price": 1136.300048828125,
+      "signal_type": "bullish"
+    },
+    {
+      "symbol": "IOC",
+      "pattern": "Double Bottom",
+      "conviction_score": 55.31,
+      "key_price": 142.89999389648438,
+      "signal_type": "bullish"
+    },
+    {
+      "symbol": "POWERGRID",
+      "pattern": "Double Bottom",
+      "conviction_score": 55.3,
+      "key_price": 314.5,
+      "signal_type": "bullish"
+    },
+    {
+      "symbol": "BAJFINANCE",
+      "pattern": "Double Bottom",
+      "conviction_score": 55.16,
+      "key_price": 908.2999877929688,
+      "signal_type": "bullish"
+    },
+    {
+      "symbol": "AMBUJACEM",
+      "pattern": "Double Bottom",
+      "conviction_score": 55.13,
+      "key_price": 440.3999938964844,
+      "signal_type": "bullish"
+    },
+    {
+      "symbol": "GODREJCP",
+      "pattern": "Double Bottom",
+      "conviction_score": 54.92,
+      "key_price": 1039.5,
+      "signal_type": "bullish"
+    },
+    {
+      "symbol": "NYKAA",
+      "pattern": "Double Bottom",
+      "conviction_score": 54.74,
+      "key_price": 258.20001220703125,
+      "signal_type": "bullish"
+    },
+    {
+      "symbol": "MPHASIS",
+      "pattern": "Double Bottom",
+      "conviction_score": 54.69,
+      "key_price": 2130.0,
+      "signal_type": "bullish"
+    },
+    {
+      "symbol": "HINDUNILVR",
+      "pattern": "Double Bottom",
+      "conviction_score": 54.6,
+      "key_price": 2299.0,
+      "signal_type": "bullish"
+    },
+    {
+      "symbol": "NTPC",
+      "pattern": "Double Bottom",
+      "conviction_score": 53.98,
+      "key_price": 393.2000122070313,
+      "signal_type": "bullish"
+    },
+    {
+      "symbol": "AUROPHARMA",
+      "pattern": "Double Bottom",
+      "conviction_score": 53.91,
+      "key_price": 1386.5999755859375,
+      "signal_type": "bullish"
+    },
+    {
+      "symbol": "ABB",
+      "pattern": "Double Bottom",
+      "conviction_score": 53.62,
+      "key_price": 6732.5,
+      "signal_type": "bullish"
+    },
+    {
+      "symbol": "ADANIPORTS",
+      "pattern": "Double Bottom",
+      "conviction_score": 53.51,
+      "key_price": 1556.5,
+      "signal_type": "bullish"
+    },
+    {
+      "symbol": "LTTS",
+      "pattern": "Double Bottom",
+      "conviction_score": 52.75,
+      "key_price": 3362.0,
+      "signal_type": "bullish"
+    },
+    {
+      "symbol": "PIDILITIND",
+      "pattern": "Double Bottom",
+      "conviction_score": 51.92,
+      "key_price": 1389.4000244140625,
+      "signal_type": "bullish"
+    },
+    {
+      "symbol": "SIEMENS",
+      "pattern": "Double Bottom",
+      "conviction_score": 51.0,
+      "key_price": 3767.89990234375,
+      "signal_type": "bullish"
+    },
+    {
+      "symbol": "DMART",
+      "pattern": "Double Bottom",
+      "conviction_score": 50.06,
+      "key_price": 4416.0,
+      "signal_type": "bullish"
+    },
+    {
+      "symbol": "CHOLAFIN",
+      "pattern": "Double Bottom",
+      "conviction_score": 49.47,
+      "key_price": 1529.9000244140625,
       "signal_type": "bullish"
     },
     {
       "symbol": "ASIANPAINT",
       "pattern": "Double Bottom",
-      "conviction_score": 37.45,
-      "key_price": 2500.0,
+      "conviction_score": 49.44,
+      "key_price": 2470.699951171875,
       "signal_type": "bullish"
     },
     {
-      "symbol": "PIDILITIND",
-      "pattern": "RSI Divergence",
-      "conviction_score": 37.1,
-      "key_price": 1259.0,
+      "symbol": "DABUR",
+      "pattern": "Double Bottom",
+      "conviction_score": 49.38,
+      "key_price": 448.1000061035156,
       "signal_type": "bullish"
     },
     {
-      "symbol": "MOTHERSON",
-      "pattern": "RSI Divergence",
-      "conviction_score": 34.26,
-      "key_price": 102.81999969482422,
+      "symbol": "BOSCHLTD",
+      "pattern": "Double Bottom",
+      "conviction_score": 49.29,
+      "key_price": 36295.0,
       "signal_type": "bullish"
     },
     {
-      "symbol": "TATACONSUM",
-      "pattern": "RSI Divergence",
-      "conviction_score": 33.04,
-      "key_price": 1007.2000122070312,
+      "symbol": "BERGEPAINT",
+      "pattern": "Double Bottom",
+      "conviction_score": 48.75,
+      "key_price": 458.2000122070313,
+      "signal_type": "bullish"
+    },
+    {
+      "symbol": "CIPLA",
+      "pattern": "Double Bottom",
+      "conviction_score": 48.16,
+      "key_price": 1222.0,
+      "signal_type": "bullish"
+    },
+    {
+      "symbol": "POLICYBZR",
+      "pattern": "Double Bottom",
+      "conviction_score": 44.88,
+      "key_price": 1582.0,
+      "signal_type": "bullish"
+    },
+    {
+      "symbol": "COLPAL",
+      "pattern": "Double Bottom",
+      "conviction_score": 43.69,
+      "key_price": 2057.60009765625,
+      "signal_type": "bullish"
+    },
+    {
+      "symbol": "CONCOR",
+      "pattern": "Double Bottom",
+      "conviction_score": 43.65,
+      "key_price": 499.0499877929688,
+      "signal_type": "bullish"
+    },
+    {
+      "symbol": "PAGEIND",
+      "pattern": "Double Bottom",
+      "conviction_score": 41.84,
+      "key_price": 37270.0,
+      "signal_type": "bullish"
+    },
+    {
+      "symbol": "TRENT",
+      "pattern": "Double Bottom",
+      "conviction_score": 40.62,
+      "key_price": 4200.0,
+      "signal_type": "bullish"
+    },
+    {
+      "symbol": "GAIL",
+      "pattern": "Double Bottom",
+      "conviction_score": 39.14,
+      "key_price": 163.35000610351562,
       "signal_type": "bullish"
     },
     {
       "symbol": "JUBLFOOD",
       "pattern": "RSI Divergence",
-      "conviction_score": 29.53,
+      "conviction_score": 29.54,
       "key_price": 408.7999877929688,
-      "signal_type": "bullish"
-    },
-    {
-      "symbol": "RELIANCE",
-      "pattern": "RSI Divergence",
-      "conviction_score": 25.67,
-      "key_price": 1290.0,
-      "signal_type": "bullish"
-    },
-    {
-      "symbol": "ICICIBANK",
-      "pattern": "RSI Divergence",
-      "conviction_score": 20.97,
-      "key_price": 1187.5999755859375,
       "signal_type": "bullish"
     }
   ]
