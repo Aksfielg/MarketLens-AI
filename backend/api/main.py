@@ -4,7 +4,7 @@ load_dotenv()
 import os
 import sys
 import subprocess
-from fastapi import FastAPI, HTTPException, Depends
+from fastapi import FastAPI, HTTPException, Depends, BackgroundTasks
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.openapi.docs import get_redoc_html, get_swagger_ui_html
 from fastapi.responses import FileResponse
@@ -14,6 +14,8 @@ from dotenv import load_dotenv
 # Ensure backend package is in path
 sys.path.append(os.path.join(os.path.dirname(__file__), '..', '..'))
 
+from backend.data.fetch_nse_data import process_and_save_data
+from backend.patterns.scanner import run_scanner
 from backend.llm.explainer import generate_explanation
 from backend.llm.video_script_writer import generate_video_script, generate_scene_audio
 from backend.video.renderer import render_video
@@ -46,6 +48,24 @@ app.include_router(stocks_router)
 app.include_router(video_router)
 app.include_router(email_router)
 app.include_router(avatar_video_router)
+
+@app.get("/api/admin/secret-cron-trigger-xyz123")
+async def trigger_daily_scan(background_tasks: BackgroundTasks):
+    def run_scanners():
+        try:
+            print("Starting automated daily scan...")
+            # CALL YOUR ACTUAL FUNCTIONS HERE:
+            process_and_save_data()
+            run_scanner()
+            print("Automated scan complete!")
+        except Exception as e:
+            print(f"Error during scan: {e}")
+
+    # This tells FastAPI to run the scripts in the background
+    # so the web request doesn't freeze and timeout
+    background_tasks.add_task(run_scanners)
+    
+    return {"status": "Success", "message": "Scanners started in the background!"}
 
 @app.get("/docs", include_in_schema=False)
 async def swagger_ui():
